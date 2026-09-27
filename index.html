@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#eee9e0"><title>Bunny Run · 跳一下，跑更远</title></head>
+<body>
+<div id="app">
+
+  <main>
+    <section id="game-card" class="game-card" aria-label="3D 兔子跑酷" data-i18n-label="3D 兔子跑酷">
+      <div class="game-top" aria-label="游戏信息" data-i18n-label="游戏信息"><a class="brand" href="./"><canvas id="brand-bunny" class="brand-icon" width="72" height="80" aria-hidden="true"></canvas><span data-i18n="小兔快跑">小兔快跑</span></a><div class="scores"><span class="score-main"><span data-i18n="星星">星星</span> <b id="score">00000</b></span><span><span data-i18n="速度">速度</span> <b id="speed">1.00×</b></span><span><span data-i18n="最好成绩">最好成绩</span> <b id="best">00000</b></span></div><div class="camera-card camera-mini"><div class="section-heading"><h2><span class="dot" id="live-dot"></span> <span data-i18n="摄像头">摄像头</span></h2></div><div class="preview"><video id="video" autoplay muted playsinline hidden></video><canvas id="pose-overlay" hidden></canvas></div><p id="camera-status" role="status">未开启</p></div></div>
+      <div class="stage"><canvas tabindex="0" id="game-canvas" aria-label="3D 兔子自动跑酷画面" data-i18n-label="3D 兔子自动跑酷画面"></canvas><div id="game-overlay"><div id="gesture-guide" hidden aria-label="跳一次 · 开始" data-i18n-label="跳一次 · 开始"><div id="gesture-fill"></div><canvas id="ready-bunny" width="360" height="252" aria-label="跳一次 · 开始" data-i18n-label="跳一次 · 开始"></canvas><small data-i18n="跳一次 · 开始">跳一次 · 开始</small></div><span id="game-message" role="status">加载中…</span><button id="camera-enable" type="button" hidden data-i18n="开启摄像头">开启摄像头</button></div></div>
+      <div class="game-actions"><div><button id="sound-button" aria-label="静音" data-i18n-label="静音" aria-pressed="false">🔊</button><button id="language-button" type="button" aria-label="Switch to English">EN</button></div></div>
+      <div class="share-actions"><span id="share-status" role="status"></span><button id="share-button" type="button" aria-label="分享最好成绩" data-i18n-label="分享最好成绩"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="分享">分享</span></button></div>
+    </section>
+    <dialog id="share-dialog"><img id="share-preview" alt="最好成绩分享卡" data-i18n-label="最好成绩分享卡"><p id="share-image-status" role="status"></p><div class="share-card-actions"><a id="share-download" download="bunny-run-best.png" data-i18n="保存图片">保存图片</a><button id="share-image-button" type="button" data-i18n="分享图片">分享图片</button><form method="dialog"><button data-i18n="关闭预览">关闭预览</button></form></div></dialog>
+
+    <details class="settings"><summary data-i18n="设置">设置</summary><section class="setup-grid"><div class="camera-actions"><button id="start-button" data-i18n="开启">开启</button><button id="stop-button" disabled data-i18n="关闭">关闭</button><select id="device-select" aria-label="选择摄像头" data-i18n-label="选择摄像头" disabled><option value="" data-i18n="默认摄像头">默认摄像头</option></select></div>
+      <div class="instructions"><p class="note" data-i18n="空格：开始 / 跳跃 / 失败后重来。体感：跳一次开始，跳一次重来。">空格：开始 / 跳跃 / 失败后重来。体感：跳一次开始，跳一次重来。</p><p class="note" data-i18n="胡萝卜：1 星。仙人掌：基础 1 或 2 星，准确度达到 60% 按 1.25 倍、90% 按 1.5 倍计算，四舍五入。准确跳跃最多分别得 2、3 星。">胡萝卜：1 星。仙人掌：基础 1 或 2 星，准确度达到 60% 按 1.25 倍、90% 按 1.5 倍计算，四舍五入。准确跳跃最多分别得 2、3 星。</p><p id="tracking-status" role="status"></p><div class="sensitivity"><label for="sensitivity" data-i18n="灵敏度">灵敏度</label><input id="sensitivity" type="range" min="0.65" max="1.6" step="0.05" value="1"><output id="sensitivity-value" data-i18n="标准">标准</output><button id="recalibrate" data-i18n="校准">校准</button><button class="primary" id="play-button" disabled><span data-i18n="开始游戏">开始游戏</span> <span>↗</span></button></div></div>
+    </section></details>
+  </main>
+
+</div><script type="module" src="/src/main.js"></script>
+</body></html>
